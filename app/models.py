@@ -21,4 +21,17 @@ class Day(db.Model):
     company_id = db.Column(db.Integer, db.ForeignKey('company.id'))
 
     def __repr__(self):
-        return '<Close %r>' % (self.close)
+        return '<%r, %r, %r, %r>' % (self.id, self.date, self.open, self.close)
+
+class CurrentDay(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    date_time = db.Column(db.DateTime)
+    open = db.Column(db.Float(asdecimal=True))
+    last = db.Column(db.Float(asdecimal=True))
+    high = db.Column(db.Float(asdecimal=True))
+    low = db.Column(db.Float(asdecimal=True))
+    volume = db.Column(db.Float(asdecimal=True))
+    company_id = db.Column(db.Integer, db.ForeignKey('company.id'))
+
+    def __repr__(self):
+        return '<Close %r>' % (self.date_time)
