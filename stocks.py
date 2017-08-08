@@ -24,11 +24,13 @@ with open('companyList.csv') as csvfile:
     stockreader = csv.reader(csvfile)
     for row in stockreader:
         print(str(row)[2:][:-2].upper())
-        stocks.append(str(row)[2:][:-2].upper())
+        x = Share(str(row)[2:][:-2].upper())
+        print(x.get_price())
+        #stocks.append(str(row)[2:][:-2].upper())
 
-for stock in stocks:
-    q = web.get_quote_google(stock)
-    print(q)
+#for stock in stocks:
+#    q = web.get_quote_google(stock)
+#    print(q)
 
 #amazon = web.DataReader("AAPL", "yahoo", start, end)
 #close = amazon["Close"]

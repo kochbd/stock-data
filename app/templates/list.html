@@ -1,0 +1,11 @@
+<html>
+	<head>
+		<title>Companies</title>
+	</head>
+
+	<body>
+		{% for stock in stocks %}
+		<div><p>{{ stock.name }} - $<b>{{ stock.price }}</b></p></div>
+		{% endfor %}
+	</body>
+</html>
